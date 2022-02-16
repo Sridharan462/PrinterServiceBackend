@@ -40,6 +40,7 @@ public class AuthController {
                 return "New user";
             } else
                 return "user Already exist";
+            //response
     }
     @CrossOrigin(origins = "http://localhost:3000")
     //@RequestMapping(value = "user/login",produces = "application/json",method = RequestMethod.POST)
