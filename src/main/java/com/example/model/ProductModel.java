@@ -18,6 +18,7 @@ public class ProductModel {
     private String problemDescription;
     private String availableSlots;
 
+    //@OneToMany(fetch = FetchType.LAZY)
     public Long getUserId() {
         return userId;
     }

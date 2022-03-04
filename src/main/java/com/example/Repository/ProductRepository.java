@@ -11,6 +11,6 @@ import java.util.List;
 
 @Repository
 public interface ProductRepository extends JpaRepository<ProductModel,Long> {
- // @Query("SELECT id,productName,productModelNo,dateOfPurchase,contactNumber,problemDescription,availableSlots,userId FROM printer.product where UserId=")
-  public List<ProductModel> findAllByUserId(@Param("userId") Long id);
+ // @Query(value = "SELECT id,productName,productModelNo,dateOfPurchase,contactNumber,problemDescription,availableSlots,userId FROM printer.product where userId= :id",nativeQuery = true)
+ public List<ProductModel> findAllByUserId(@Param("userId") Long id);
 }
