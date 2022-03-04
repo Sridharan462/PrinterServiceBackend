@@ -1,22 +1,21 @@
 package com.example.model;
 
 import javax.persistence.*;
-import java.sql.Time;
-import java.util.Date;
 
 @Entity
-@Table(name="Product")
+@Table(name = "Product")
 public class ProductModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String productName;
     private String productModelNo;
-    @Temporal(TemporalType.DATE)
-    private Date dateOfPurchase;
+    //    @Temporal(TemporalType.DATE)
+    private String dateOfPurchase;
     private String contactNumber;
     private String problemDescription;
     private String availableSlots;
+    private Long userId;
 
     public Long getUserId() {
         return userId;
@@ -25,9 +24,6 @@ public class ProductModel {
     public void setUserId(Long userId) {
         this.userId = userId;
     }
-
-    private Long  userId;
-
 
     public String getProductName() {
         return productName;
@@ -45,11 +41,19 @@ public class ProductModel {
         this.productModelNo = productModelNo;
     }
 
-    public Date getDateOfPurchase() {
+//    public Date getDateOfPurchase() {
+//        return dateOfPurchase;
+//    }
+//
+//    public void setDateOfPurchase(Date dateOfPurchase) {
+//        this.dateOfPurchase = dateOfPurchase;
+//    }
+
+    public String getDateOfPurchase() {
         return dateOfPurchase;
     }
 
-    public void setDateOfPurchase(Date dateOfPurchase) {
+    public void setDateOfPurchase(String dateOfPurchase) {
         this.dateOfPurchase = dateOfPurchase;
     }
 
