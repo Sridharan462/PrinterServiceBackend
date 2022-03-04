@@ -19,6 +19,13 @@ public class ServiceModel {
     public ServiceModel() {
     }
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public String getServiceCenterId() {
         return serviceCenterId;

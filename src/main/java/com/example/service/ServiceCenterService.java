@@ -1,11 +1,10 @@
 package com.example.service;
-
 import com.example.Repository.ServiceRepository;
 import com.example.model.ServiceModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ServiceCenterService{
@@ -15,9 +14,11 @@ public class ServiceCenterService{
     {
         servicerepo.save(service);
     }
-    public ServiceModel findById(String serviceCenterId)
+    public ServiceModel findById(Long id)
     {
-        return servicerepo.findByServiceCenterId(serviceCenterId);
+         Optional<ServiceModel> service=servicerepo.findById(id);
+         ServiceModel serviceCenter=service.get();
+         return serviceCenter;
     }
     public void deleteAll()
     {

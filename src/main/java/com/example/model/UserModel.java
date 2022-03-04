@@ -1,11 +1,10 @@
 package com.example.model;
-import java.util.List;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name="login")
-public class AuthModel {
+public class UserModel {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
@@ -15,14 +14,27 @@ public class AuthModel {
 	private String phonenumber;
 	private String password;
 	private String confirmpassword;
-	public AuthModel(){
+	public UserModel(){
 		
 	}
-	public AuthModel(String username,String email){
+	public UserModel(String username, String email){
 		this.username=username;
 		this.email=email;
 	}
-public String getUseroradmin() {
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getConfirmpassword() {
+		return confirmpassword;
+	}
+
+	public String getUseroradmin() {
 		return useroradmin;
 	}
 	public void setUseroradmin(String useroradmin) {
