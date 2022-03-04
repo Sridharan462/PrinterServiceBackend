@@ -3,10 +3,10 @@ package com.example.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name="service")
+@Table(name = "service")
 public class ServiceModel {
     @Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String serviceCenterId;
     private String serviceCenterName;
