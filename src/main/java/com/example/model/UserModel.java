@@ -17,8 +17,8 @@ public class UserModel {
     private String password;
     private String confirmpassword;
 
-    @OneToMany(cascade = CascadeType.ALL, targetEntity = ServiceModel.class)
-    private List<ServiceModel> serviceModel = new ArrayList<>();
+    @OneToMany(cascade = CascadeType.ALL, targetEntity = ProductModel.class)
+    private List<ProductModel> productModel = new ArrayList<>();
 
     public UserModel() {
 
@@ -29,12 +29,12 @@ public class UserModel {
         this.email = email;
     }
 
-    public List<ServiceModel> getServiceModel() {
-        return serviceModel;
+    public List<ProductModel> getProductModel() {
+        return productModel;
     }
 
-    public void setServiceModel(List<ServiceModel> serviceModel) {
-        this.serviceModel = serviceModel;
+    public void ProductModel(List<ProductModel> productModel) {
+        this.productModel = productModel;
     }
 
     public Long getId() {

@@ -13,8 +13,8 @@ import java.util.List;
 @RestController
 @CrossOrigin(origins = "*")
 public class ProductController {
-    @Autowired
-    UserController userController;
+//    @Autowired
+//    UserController userController;
     @Autowired
     private ProductService productService;
     @Autowired
@@ -23,15 +23,15 @@ public class ProductController {
     @CrossOrigin(origins = "http://localhost:3000")
     @PostMapping("/user/addUser")
     public String addUser(@RequestBody ProductModel product) {
-        product.setUserId(userController.loginUser.getId());
+      //  product.setUserId(userController.loginUser.getId());
         productService.saveAll(product);
         return "added";
     }
 
     @CrossOrigin(origins = "http://localhost:3000")
     @GetMapping("/user/getUser")
-    public List<ProductModel> getUser(@RequestParam("userId") Long id) {
-        return productService.findByuserId(userController.loginUser.getId());
+    public List<ProductModel> getUser(@RequestParam ("userId") Long id) {
+        return productService.findByuserId(id);
     }
 
     @CrossOrigin(origins = "http://localhost:3000")

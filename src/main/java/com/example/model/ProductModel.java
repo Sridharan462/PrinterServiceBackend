@@ -1,6 +1,7 @@
 package com.example.model;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 @Table(name = "Product")
@@ -10,8 +11,8 @@ public class ProductModel {
     private Long id;
     private String productName;
     private String productModelNo;
-    //    @Temporal(TemporalType.DATE)
-    private String dateOfPurchase;
+    @Temporal(TemporalType.DATE)
+    private Date dateOfPurchase;
     private String contactNumber;
     private String problemDescription;
     private String availableSlots;
@@ -42,21 +43,28 @@ public class ProductModel {
         this.productModelNo = productModelNo;
     }
 
-//    public Date getDateOfPurchase() {
-//        return dateOfPurchase;
-//    }
-//
-//    public void setDateOfPurchase(Date dateOfPurchase) {
-//        this.dateOfPurchase = dateOfPurchase;
-//    }
-
-    public String getDateOfPurchase() {
+    public Date getDateOfPurchase() {
         return dateOfPurchase;
     }
 
-    public void setDateOfPurchase(String dateOfPurchase) {
+    public void setDateOfPurchase(Date dateOfPurchase) {
         this.dateOfPurchase = dateOfPurchase;
     }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+//    public String getDateOfPurchase() {
+//        return dateOfPurchase;
+//    }
+//
+//    public void setDateOfPurchase(String dateOfPurchase) {
+//        this.dateOfPurchase = dateOfPurchase;
+//    }
 
     public String getContactNumber() {
         return contactNumber;

@@ -46,13 +46,13 @@ public class UserController {
             if (authService.findByEmail(login.getEmail()).getUseroradmin().equals("user")) {
                 if (login.getPassword().equals(authService.findByEmail(login.getEmail()).getPassword()))
                     return authService.findByEmail(login.getEmail());
-//              return "incorrect password";
+              return null;
             } else if (authService.findByEmail(login.getEmail()).getUseroradmin().equals("admin")) {
                 if (login.getPassword().equals("admin")) {
                     return authService.findByEmail(login.getEmail());
                 }
-//                else
-//              return new Mismatch("incorrect");
+                else
+              return null;
             }
         }
         return null;
